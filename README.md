@@ -74,9 +74,6 @@ python particle.py
 - Matplotlib
 - Jupyter
 
-## Author
-
-**Danyil Dorosh** — Physics student, University of Warsaw
 
 ## License
 
