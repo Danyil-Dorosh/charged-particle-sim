@@ -3,30 +3,28 @@ Charged particle motion in a static magnetic field.
 
 Solves the Lorentz-force equation  m dv/dt = q (v × B)
 using SciPy's RK4(5) integrator (solve_ivp with method='RK45').
-
-Author: Danyil Dorosh
 """
 
 import numpy as np
 from scipy.integrate import solve_ivp
 
 # --------------- physical parameters ---------------
-q = 1.602e-19       # charge  [C]  (proton)
-m = 1.673e-27       # mass    [kg] (proton)
-B0 = 0.1            # magnetic field magnitude [T]
-B_dir = np.array([0.0, 0.0, 1.0])  # B along z-axis
+q = 1.602e-19      
+m = 1.673e-27      
+B0 = 0.1          
+B_dir = np.array([0.0, 0.0, 1.0]) 
 
 # --------------- initial conditions -----------------
-v_perp = 1e5        # perpendicular speed [m/s]
-v_par  = 3e4        # parallel speed      [m/s]
+v_perp = 1e5       
+v_par  = 3e4        
 
-r0 = np.array([0.0, 0.0, 0.0])                   # position [m]
-v0 = np.array([v_perp, 0.0, v_par])               # velocity [m/s]
-y0 = np.concatenate([r0, v0])                      # state vector
+r0 = np.array([0.0, 0.0, 0.0])                  
+v0 = np.array([v_perp, 0.0, v_par])             
+y0 = np.concatenate([r0, v0])                     
 
 # --------------- time span --------------------------
-omega_c = abs(q) * B0 / m          # cyclotron frequency
-T_c     = 2 * np.pi / omega_c      # cyclotron period
+omega_c = abs(q) * B0 / m         
+T_c     = 2 * np.pi / omega_c     
 t_span  = (0, 5 * T_c)
 t_eval  = np.linspace(*t_span, 2000)
 
