@@ -54,7 +54,7 @@ The RK45 integrator conserves kinetic energy to $\sim 10^{-9}$ relative error ov
 ## Quick Start
 
 ```bash
-git clone https://github.com/TupoProgramist/charged-particle-sim.git
+git clone https://github.com/Danyil-Dorosh/charged-particle-sim.git
 cd charged-particle-sim
 pip install -r requirements.txt
 jupyter notebook simulation.ipynb
